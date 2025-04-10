@@ -17,8 +17,15 @@ int main() {
     std::getline(std::cin, userInput);
 
     try {
-        // Convert the user's input to an integer
-        int userNum = std::stoi(userInput);
+        size_t pos;
+        // # Convert the user's guess to an integer
+        // pos will be equal to the length of the input converted
+        int userNum = std::stoi(userInput, &pos);
+
+        // REFUSE FLOATS
+        if (pos != userInput.length()) {
+            throw std::invalid_argument("NO FLOATS");
+        }
 
         // REFUSE FLOATS
         if (userInput.find('.')) {
