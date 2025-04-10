@@ -27,11 +27,6 @@ int main() {
             throw std::invalid_argument("NO FLOATS");
         }
 
-        // REFUSE FLOATS
-        if (userInput.find('.')) {
-            throw std::invalid_argument("NO FLOATS");
-        }
-
         // Check if the user's number is positive
         if (userNum > 0) {
             // Initialize variables for the loop
